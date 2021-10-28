@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<parameter name="url" value="http://localhost:8888/" />
+	<parameter name="username" value="admin" />
+	<parameter name="password" value="admin" />
+	<test thread-count="5" name="Test">
+		<classes>
+			<class name="DDT.practice.ReadParameterFromXMLFileTest" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
