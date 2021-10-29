@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="JDBC.practice.ExecuteQuery">
+      <class name="com.vTiger.testcases.CreateContactWithOrganisation">
         <methods>
-          <include name="executeQueryTest"/>
+          <include name="createContactWithOrganisation"/>
         </methods>
-      </class> <!-- JDBC.practice.ExecuteQuery -->
+      </class> <!-- com.vTiger.testcases.CreateContactWithOrganisation -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
