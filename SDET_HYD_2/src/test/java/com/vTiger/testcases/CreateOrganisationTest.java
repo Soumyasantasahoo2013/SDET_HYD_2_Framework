@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
+import com.vtiger.genericutil.ExcelUtility;
 import com.vtiger.genericutil.JavaUtility;
 import com.vtiger.genericutil.PropertyFileUtility;
 import com.vtiger.genericutil.WebDriverUtility;
@@ -19,6 +20,8 @@ public class CreateOrganisationTest {
 	public void createOrganisationTest() throws Throwable
 	{
 		WebDriverUtility wUtil=new WebDriverUtility();
+		ExcelUtility eUtil=new ExcelUtility();
+		String orgName = eUtil.excelUtility("Sheet1",1 , 2)+"_"+JavaUtility.generateRandomNumber();
 		
 		PropertyFileUtility pUtil=new PropertyFileUtility();
 		String URL = pUtil.propertyFileUtility("url");
@@ -39,7 +42,7 @@ public class CreateOrganisationTest {
 	    //Create Organisation
 	    driver.findElement(By.linkText("Organizations")).click();
 	    driver.findElement(By.xpath("//img[@title='Create Organization...']")).click();
-	    driver.findElement(By.name("accountname")).sendKeys("Session"+"_"+JavaUtility.generateRandomNumber());
+	    driver.findElement(By.name("accountname")).sendKeys(orgName);
 	    driver.findElement(By.xpath("//input[@title='Save [Alt+S]']")).click();
 	    
 	    //Logout from the application

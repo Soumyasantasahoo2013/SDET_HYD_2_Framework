@@ -12,6 +12,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
+import com.vtiger.genericutil.ExcelUtility;
 import com.vtiger.genericutil.JavaUtility;
 import com.vtiger.genericutil.PropertyFileUtility;
 import com.vtiger.genericutil.WebDriverUtility;
@@ -22,6 +23,11 @@ public class CreateContactWithOrganisation {
 	@Test
 	public void createContactWithOrganisation() throws Throwable
 	{
+		ExcelUtility eUtil=new ExcelUtility();
+		String firstName = eUtil.excelUtility("Sheet1", 5, 2)+"_"+JavaUtility.generateRandomNumber();
+		String lastName = eUtil.excelUtility("Sheet1", 5, 3)+"_"+JavaUtility.generateRandomNumber();
+		String searchType = eUtil.excelUtility("Sheet1", 5, 4);
+		
 		WebDriverUtility wUtil=new WebDriverUtility();
 		PropertyFileUtility pUtil=new PropertyFileUtility();
 		String URL = pUtil.propertyFileUtility("url");
@@ -44,15 +50,15 @@ public class CreateContactWithOrganisation {
 		driver.findElement(By.xpath("//img[@title='Create Contact...']")).click();
 		WebElement fn = driver.findElement(By.name("salutationtype"));
 		wUtil.selectByVisibleText(fn, "Mr.");
-		driver.findElement(By.xpath("//input[@name='firstname']")).sendKeys("Soumya"+"_"+JavaUtility.generateRandomNumber());
-		driver.findElement(By.xpath("//input[@name='lastname']")).sendKeys("Sahoo"+"_"+JavaUtility.generateRandomNumber());
+		driver.findElement(By.xpath("//input[@name='firstname']")).sendKeys(firstName);
+		driver.findElement(By.xpath("//input[@name='lastname']")).sendKeys(lastName);
 		Thread.sleep(4000);
 		driver.findElement(By.xpath("(//img[@title='Select'])[1]")).click();
 		
 		//Switch to child window
 		String partialWinTitle="Accounts";
 		wUtil.switchToWindow(driver, partialWinTitle);
-		driver.findElement(By.id("search_txt")).sendKeys("Session8");
+		driver.findElement(By.id("search_txt")).sendKeys(searchType);
 		driver.findElement(By.name("search")).click();
 		driver.findElement(By.xpath("//a[text()='Session8']")).click();
 		
