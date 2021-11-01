@@ -3,11 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.vTiger.testcases.CreateContactWithOrganisation">
+      <class name="com.vTiger.testcases.CreateOrganisationTest">
         <methods>
-          <include name="createContactWithOrganisation"/>
+          <include name="logout"/>
+          <include name="closeBrowser"/>
+          <include name="createOrganisationTest"/>
+          <include name="connectDatabase"/>
+          <include name="launchBrowser"/>
+          <include name="disconnectDatabase"/>
+          <include name="login"/>
         </methods>
-      </class> <!-- com.vTiger.testcases.CreateContactWithOrganisation -->
+      </class> <!-- com.vTiger.testcases.CreateOrganisationTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

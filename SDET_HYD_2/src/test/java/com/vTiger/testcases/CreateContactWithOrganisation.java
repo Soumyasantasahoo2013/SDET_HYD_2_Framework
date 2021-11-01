@@ -10,41 +10,25 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.vtiger.genericutil.BaseClass;
 import com.vtiger.genericutil.ExcelUtility;
 import com.vtiger.genericutil.JavaUtility;
 import com.vtiger.genericutil.PropertyFileUtility;
 import com.vtiger.genericutil.WebDriverUtility;
 
-public class CreateContactWithOrganisation {
+public class CreateContactWithOrganisation extends BaseClass{
 
 	
 	@Test
 	public void createContactWithOrganisation() throws Throwable
 	{
-		ExcelUtility eUtil=new ExcelUtility();
 		String firstName = eUtil.excelUtility("Sheet1", 5, 2)+"_"+JavaUtility.generateRandomNumber();
 		String lastName = eUtil.excelUtility("Sheet1", 5, 3)+"_"+JavaUtility.generateRandomNumber();
 		String searchType = eUtil.excelUtility("Sheet1", 5, 4);
 		
-		WebDriverUtility wUtil=new WebDriverUtility();
-		PropertyFileUtility pUtil=new PropertyFileUtility();
-		String URL = pUtil.propertyFileUtility("url");
-		String UN = pUtil.propertyFileUtility("username");
-		String pwd = pUtil.propertyFileUtility("password");
-		
-		//Open the Browser
-		WebDriver driver=new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
-		//Login into the application
-		driver.get(URL);
-		driver.findElement(By.name("user_name")).sendKeys(UN);
-		driver.findElement(By.name("user_password")).sendKeys(pwd);
-		driver.findElement(By.id("submitButton")).click();
-
 		//Create Contact with Organisation
 		driver.findElement(By.linkText("Contacts")).click();
 		driver.findElement(By.xpath("//img[@title='Create Contact...']")).click();
@@ -67,16 +51,7 @@ public class CreateContactWithOrganisation {
 		wUtil.switchToWindow(driver, partialWinTitle1);
 		Thread.sleep(4000);
 		driver.findElement(By.xpath("//input[@title='Save [Alt+S]']")).click();
-
-		//Logout from the application
-		Thread.sleep(4000);
-		WebElement admImg = driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"));
-		wUtil.mouseOver(driver, admImg);
-		driver.findElement(By.linkText("Sign Out")).click();
-
-		//Close the connection
-		Thread.sleep(4000);
-		driver.close();  
+		
 	}
 
 }
