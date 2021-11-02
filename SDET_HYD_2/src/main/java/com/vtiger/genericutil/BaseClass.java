@@ -6,12 +6,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
+
+import com.beust.jcommander.Parameter;
 
 public class BaseClass {
 
@@ -19,6 +23,7 @@ public class BaseClass {
 	public PropertyFileUtility pUtil=new PropertyFileUtility();
 	public WebDriverUtility wUtil=new WebDriverUtility();
 	public ExcelUtility eUtil=new ExcelUtility();
+	public static WebDriver sdriver;
 	
 	@BeforeSuite(groups = {"smokeTest","regressionTest"})
 	public void connectDatabase()
@@ -26,12 +31,21 @@ public class BaseClass {
 		System.out.println("Connect to Database");
 	}
 
+	//@Parameters("browser")
 	@BeforeClass(groups = {"smokeTest","regressionTest"})
 	public void launchBrowser() throws Throwable
 	{
 		//Open the Browser
-		driver=new ChromeDriver();
+		String BROWSER = pUtil.propertyFileUtility("browser");
+		if(BROWSER.equalsIgnoreCase("chrome"))
+		{
+			driver=new ChromeDriver();
+		}
+		else if (BROWSER.equalsIgnoreCase("firefox")) {
+			driver=new FirefoxDriver();
+		}
 		driver.manage().window().maximize();
+		sdriver=driver;
 		wUtil.waitForPageLoad(driver);
 	}
 

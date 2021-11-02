@@ -1,44 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-11-01T17:43:15 IST" name="Suite" finished-at="2021-11-01T17:43:53 IST" duration-ms="38379">
+  <suite started-at="2021-11-02T17:24:15 IST" name="Default suite" finished-at="2021-11-02T17:24:15 IST" duration-ms="92">
     <groups>
-      <group name="regressionTest">
-        <method signature="OrganisationTest.createOrganisationWithIndustry()[pri:0, instance:com.vTiger.testcases.OrganisationTest@1ed1993a]" name="createOrganisationWithIndustry" class="com.vTiger.testcases.OrganisationTest"/>
-      </group> <!-- regressionTest -->
     </groups>
-    <test started-at="2021-11-01T17:43:15 IST" name="Test" finished-at="2021-11-01T17:43:53 IST" duration-ms="38379">
-      <class name="com.vTiger.testcases.OrganisationTest">
-        <test-method is-config="true" signature="connectDatabase()[pri:0, instance:com.vTiger.testcases.OrganisationTest@1ed1993a]" started-at="2021-11-01T17:43:14 IST" name="connectDatabase" finished-at="2021-11-01T17:43:15 IST" duration-ms="21" status="PASS">
+    <test started-at="2021-11-02T17:24:15 IST" name="Default test" finished-at="2021-11-02T17:24:15 IST" duration-ms="92">
+      <class name="com.vTiger.testcases.DataProvider">
+        <test-method signature="getData(java.lang.String, double)[pri:0, instance:com.vTiger.testcases.DataProvider@1ffe63b9]" started-at="2021-11-02T17:24:15 IST" name="getData" data-provider="sendData" finished-at="2021-11-02T17:24:15 IST" duration-ms="12" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ACC_1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[4565.0]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- connectDatabase -->
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.vTiger.testcases.OrganisationTest@1ed1993a]" started-at="2021-11-01T17:43:15 IST" name="launchBrowser" finished-at="2021-11-01T17:43:18 IST" duration-ms="3600" status="PASS">
+        </test-method> <!-- getData -->
+        <test-method signature="getData(java.lang.String, double)[pri:0, instance:com.vTiger.testcases.DataProvider@1ffe63b9]" started-at="2021-11-02T17:24:15 IST" name="getData" data-provider="sendData" finished-at="2021-11-02T17:24:15 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ACC_2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[4565]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.vTiger.testcases.OrganisationTest@1ed1993a]" started-at="2021-11-01T17:43:18 IST" name="login" finished-at="2021-11-01T17:43:25 IST" duration-ms="6683" status="PASS">
+        </test-method> <!-- getData -->
+        <test-method signature="getData(java.lang.String, double)[pri:0, instance:com.vTiger.testcases.DataProvider@1ffe63b9]" started-at="2021-11-02T17:24:15 IST" name="getData" data-provider="sendData" finished-at="2021-11-02T17:24:15 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ACC_3]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[465.0]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
-        <test-method signature="createOrganisationWithIndustry()[pri:0, instance:com.vTiger.testcases.OrganisationTest@1ed1993a]" started-at="2021-11-01T17:43:25 IST" name="createOrganisationWithIndustry" finished-at="2021-11-01T17:43:39 IST" duration-ms="14574" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createOrganisationWithIndustry -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:com.vTiger.testcases.OrganisationTest@1ed1993a]" started-at="2021-11-01T17:43:39 IST" name="logout" finished-at="2021-11-01T17:43:49 IST" duration-ms="9263" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logout -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.vTiger.testcases.OrganisationTest@1ed1993a]" started-at="2021-11-01T17:43:49 IST" name="closeBrowser" finished-at="2021-11-01T17:43:53 IST" duration-ms="4177" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="disconnectDatabase()[pri:0, instance:com.vTiger.testcases.OrganisationTest@1ed1993a]" started-at="2021-11-01T17:43:53 IST" name="disconnectDatabase" finished-at="2021-11-01T17:43:53 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- disconnectDatabase -->
-      </class> <!-- com.vTiger.testcases.OrganisationTest -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+        </test-method> <!-- getData -->
+      </class> <!-- com.vTiger.testcases.DataProvider -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

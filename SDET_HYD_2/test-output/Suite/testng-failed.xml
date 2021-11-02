@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="2" parallel="tests" name="Test_Runner1(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.vTiger.testcases.OrganisationTest">
+        <methods>
+          <include name="logout"/>
+          <include name="closeBrowser"/>
+          <include name="connectDatabase"/>
+          <include name="launchBrowser"/>
+          <include name="disconnectDatabase"/>
+          <include name="login"/>
+          <include name="createOrganisationTest"/>
+        </methods>
+      </class> <!-- com.vTiger.testcases.OrganisationTest -->
+    </classes>
+  </test> <!-- Test_Runner1(failed) -->
+  <test thread-count="2" parallel="tests" name="Test_Runner2(failed)">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="com.vTiger.testcases.OrganisationTest">
+        <methods>
+          <include name="logout"/>
+          <include name="closeBrowser"/>
+          <include name="createOrganisationWithIndustry"/>
+          <include name="connectDatabase"/>
+          <include name="launchBrowser"/>
+          <include name="disconnectDatabase"/>
+          <include name="login"/>
+        </methods>
+      </class> <!-- com.vTiger.testcases.OrganisationTest -->
+    </classes>
+  </test> <!-- Test_Runner2(failed) -->
+</suite> <!-- Failed suite [Suite] -->

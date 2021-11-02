@@ -6,17 +6,21 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-public class SampleTest {
+import com.vtiger.genericutil.BaseClass;
+
+@Listeners(com.vtiger.genericutil.ListenerImp.class)
+public class SampleTest extends BaseClass {
 
 	@Test
 	public void createOrganization()
 	{
-		System.out.println("create the Organization");
+		System.out.println(10/0);
 	}
 
-	@Test
+	//@Test
 	public void modifyOrganization()
 	{
 		System.out.println("Modify the Organization");
