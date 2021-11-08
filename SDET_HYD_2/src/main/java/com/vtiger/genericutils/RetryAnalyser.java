@@ -1,4 +1,4 @@
-package com.vtiger.genericutil;
+package com.vtiger.genericutils;
 
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;

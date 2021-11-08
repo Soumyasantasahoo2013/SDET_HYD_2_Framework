@@ -10,11 +10,14 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
-import com.vtiger.genericutil.BaseClass;
-import com.vtiger.genericutil.ExcelUtility;
-import com.vtiger.genericutil.JSONFileUtility;
-import com.vtiger.genericutil.JavaUtility;
-import com.vtiger.genericutil.WebDriverUtility;
+import com.vtiger.genericutils.BaseClass;
+import com.vtiger.genericutils.ExcelUtility;
+import com.vtiger.genericutils.JSONFileUtility;
+import com.vtiger.genericutils.JavaUtility;
+import com.vtiger.genericutils.WebDriverUtility;
+import com.vtiger.objectRepository.CreateOrganisation;
+import com.vtiger.objectRepository.HomePage;
+import com.vtiger.objectRepository.OrganisationPage;
 
 public class CreateOrganisationWithIndustry extends BaseClass{
 
@@ -24,14 +27,16 @@ public class CreateOrganisationWithIndustry extends BaseClass{
 		ExcelUtility eUtil=new ExcelUtility();
 		String orgName = eUtil.excelUtility("Sheet1",1 , 2)+"_"+JavaUtility.generateRandomNumber();
 		String indusType = eUtil.excelUtility("Sheet1", 3, 3);
-		
+
 		//Create Organisation with Industry
-		driver.findElement(By.linkText("Organizations")).click();
-		driver.findElement(By.xpath("//img[@title='Create Organization...']")).click();
-		driver.findElement(By.name("accountname")).sendKeys(orgName);
-		driver.findElement(By.xpath("//input[@title='Save [Alt+S]']")).click();
-		WebElement ind = driver.findElement(By.name("industry"));
-		wUtil.selectByVisibleText(ind, indusType);
+		hp=new HomePage(driver);
+		hp.clickOnOrganisation();
+
+		OrganisationPage op=new OrganisationPage(driver);
+		op.clickOnCreateOrg();
+		
+		CreateOrganisation co=new CreateOrganisation(driver);
+		co.createOrgNamewithIndustry(orgName, indusType);
 	}
 
 }

@@ -1,61 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-11-02T17:24:15 IST" name="Default suite" finished-at="2021-11-02T17:24:15 IST" duration-ms="92">
+  <suite started-at="2021-11-08T12:41:50 IST" name="Default suite" finished-at="2021-11-08T12:42:45 IST" duration-ms="54836">
     <groups>
     </groups>
-    <test started-at="2021-11-02T17:24:15 IST" name="Default test" finished-at="2021-11-02T17:24:15 IST" duration-ms="92">
-      <class name="com.vTiger.testcases.DataProvider">
-        <test-method signature="getData(java.lang.String, double)[pri:0, instance:com.vTiger.testcases.DataProvider@1ffe63b9]" started-at="2021-11-02T17:24:15 IST" name="getData" data-provider="sendData" finished-at="2021-11-02T17:24:15 IST" duration-ms="12" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ACC_1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[4565.0]]>
-              </value>
-            </param>
-          </params>
+    <test started-at="2021-11-08T12:41:50 IST" name="Default test" finished-at="2021-11-08T12:42:45 IST" duration-ms="54836">
+      <class name="com.vTiger.testcases.CreateOrganisationTest">
+        <test-method is-config="true" signature="connectDatabase()[pri:0, instance:com.vTiger.testcases.CreateOrganisationTest@1f3f4916]" started-at="2021-11-08T12:41:50 IST" name="connectDatabase" finished-at="2021-11-08T12:41:50 IST" duration-ms="10" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getData -->
-        <test-method signature="getData(java.lang.String, double)[pri:0, instance:com.vTiger.testcases.DataProvider@1ffe63b9]" started-at="2021-11-02T17:24:15 IST" name="getData" data-provider="sendData" finished-at="2021-11-02T17:24:15 IST" duration-ms="2" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ACC_2]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[4565]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- connectDatabase -->
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.vTiger.testcases.CreateOrganisationTest@1f3f4916]" started-at="2021-11-08T12:41:50 IST" name="launchBrowser" finished-at="2021-11-08T12:41:53 IST" duration-ms="2778" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getData -->
-        <test-method signature="getData(java.lang.String, double)[pri:0, instance:com.vTiger.testcases.DataProvider@1ffe63b9]" started-at="2021-11-02T17:24:15 IST" name="getData" data-provider="sendData" finished-at="2021-11-02T17:24:15 IST" duration-ms="2" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ACC_3]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[465.0]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- launchBrowser -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.vTiger.testcases.CreateOrganisationTest@1f3f4916]" started-at="2021-11-08T12:41:53 IST" name="login" finished-at="2021-11-08T12:42:20 IST" duration-ms="27540" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getData -->
-      </class> <!-- com.vTiger.testcases.DataProvider -->
+        </test-method> <!-- login -->
+        <test-method signature="createOrganisationTest()[pri:0, instance:com.vTiger.testcases.CreateOrganisationTest@1f3f4916]" started-at="2021-11-08T12:42:20 IST" name="createOrganisationTest" finished-at="2021-11-08T12:42:41 IST" duration-ms="20380" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createOrganisationTest -->
+        <test-method is-config="true" signature="logout()[pri:0, instance:com.vTiger.testcases.CreateOrganisationTest@1f3f4916]" started-at="2021-11-08T12:42:41 IST" name="logout" finished-at="2021-11-08T12:42:45 IST" duration-ms="4045" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at java.base/java.util.Objects.requireNonNull(Objects.java:222)
+at org.openqa.selenium.interactions.Actions.<init>(Actions.java:65)
+at com.vtiger.genericutils.WebDriverUtility.mouseOver(WebDriverUtility.java:73)
+at com.vtiger.objectRepository.HomePage.signOutFromVtiger(HomePage.java:58)
+at com.vtiger.genericutils.BaseClass.logout(BaseClass.java:70)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:61)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:366)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:320)
+at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:701)
+at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:677)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:661)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1507)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.vTiger.testcases.CreateOrganisationTest@1f3f4916]" started-at="2021-11-08T12:42:45 IST" name="closeBrowser" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1636355565366" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="disconnectDatabase()[pri:0, instance:com.vTiger.testcases.CreateOrganisationTest@1f3f4916]" started-at="2021-11-08T12:42:45 IST" name="disconnectDatabase" finished-at="2021-11-08T12:42:45 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- disconnectDatabase -->
+      </class> <!-- com.vTiger.testcases.CreateOrganisationTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

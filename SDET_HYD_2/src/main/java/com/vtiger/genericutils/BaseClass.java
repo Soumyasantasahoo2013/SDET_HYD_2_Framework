@@ -1,4 +1,4 @@
-package com.vtiger.genericutil;
+package com.vtiger.genericutils;
 
 import java.util.concurrent.TimeUnit;
 
@@ -16,6 +16,8 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 
 import com.beust.jcommander.Parameter;
+import com.vtiger.objectRepository.HomePage;
+import com.vtiger.objectRepository.Login;
 
 public class BaseClass {
 
@@ -24,6 +26,7 @@ public class BaseClass {
 	public WebDriverUtility wUtil=new WebDriverUtility();
 	public ExcelUtility eUtil=new ExcelUtility();
 	public static WebDriver sdriver;
+	public HomePage hp;
 	
 	@BeforeSuite(groups = {"smokeTest","regressionTest"})
 	public void connectDatabase()
@@ -54,9 +57,8 @@ public class BaseClass {
 	{
 		//Login into the application
 		driver.get(pUtil.propertyFileUtility("url"));
-		driver.findElement(By.name("user_name")).sendKeys(pUtil.propertyFileUtility("username"));
-		driver.findElement(By.name("user_password")).sendKeys(pUtil.propertyFileUtility("password"));
-		driver.findElement(By.id("submitButton")).click();
+		Login lp=new Login(driver);
+		lp.loginIntoVtiger(pUtil.propertyFileUtility("username"), pUtil.propertyFileUtility("password"));
 	}
 
 	@AfterMethod(groups = {"smokeTest","regressionTest"})
@@ -64,9 +66,8 @@ public class BaseClass {
 	{
 		//Logout from the application
 		Thread.sleep(4000);
-		WebElement admImg = driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"));
-		wUtil.mouseOver(driver, admImg);
-		driver.findElement(By.linkText("Sign Out")).click();
+		hp=new HomePage(driver);
+		hp.signOutFromVtiger();
 	}
 
 	@AfterClass(groups = {"smokeTest","regressionTest"})

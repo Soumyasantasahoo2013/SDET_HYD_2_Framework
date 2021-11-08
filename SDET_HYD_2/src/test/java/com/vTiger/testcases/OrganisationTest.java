@@ -6,9 +6,9 @@ import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
-import com.vtiger.genericutil.BaseClass;
-import com.vtiger.genericutil.ExcelUtility;
-import com.vtiger.genericutil.JavaUtility;
+import com.vtiger.genericutils.BaseClass;
+import com.vtiger.genericutils.ExcelUtility;
+import com.vtiger.genericutils.JavaUtility;
 
 public class OrganisationTest extends BaseClass{
 	

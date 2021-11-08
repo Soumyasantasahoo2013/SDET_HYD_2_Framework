@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestNG.practice.SampleTest2">
+      <class name="POM.practice.RepoTest">
         <methods>
-          <include name="createOrganization"/>
+          <include name="repoTest"/>
         </methods>
-      </class> <!-- TestNG.practice.SampleTest2 -->
+      </class> <!-- POM.practice.RepoTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

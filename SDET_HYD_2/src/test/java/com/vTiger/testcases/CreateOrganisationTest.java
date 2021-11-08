@@ -12,36 +12,36 @@ import org.testng.Reporter;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import com.vtiger.genericutil.BaseClass;
-import com.vtiger.genericutil.ExcelUtility;
-import com.vtiger.genericutil.JavaUtility;
-import com.vtiger.genericutil.PropertyFileUtility;
-import com.vtiger.genericutil.WebDriverUtility;
+import com.vtiger.genericutils.BaseClass;
+import com.vtiger.genericutils.ExcelUtility;
+import com.vtiger.genericutils.JavaUtility;
+import com.vtiger.genericutils.PropertyFileUtility;
+import com.vtiger.genericutils.WebDriverUtility;
+import com.vtiger.objectRepository.CreateOrganisation;
+import com.vtiger.objectRepository.HomePage;
+import com.vtiger.objectRepository.OrganisationInfo;
+import com.vtiger.objectRepository.OrganisationPage;
 
 public class CreateOrganisationTest extends BaseClass{
 
-	@Test(invocationCount = 3)
+	@Test
 	public void createOrganisationTest() throws Throwable
 	{
 		ExcelUtility eUtil=new ExcelUtility();
 		String orgName = eUtil.excelUtility("Sheet1",1 , 2)+"_"+JavaUtility.generateRandomNumber();
 
 		//Create Organisation
-		driver.findElement(By.linkText("Organizations")).click();
-		driver.findElement(By.xpath("//img[@title='Create Organization...']")).click();
-		driver.findElement(By.name("accountname")).sendKeys(orgName);
-		driver.findElement(By.xpath("//input[@title='Save [Alt+S]']")).click();
-		Reporter.log("Organisation Created");
+		hp=new HomePage(driver);
+		hp.clickOnOrganisation();
+		
+		OrganisationPage op=new OrganisationPage(driver);
+		op.clickOnCreateOrg();
+		
+		CreateOrganisation co=new CreateOrganisation(driver);
+		co.createOrgName(orgName);
 
-		WebElement orgInfo = driver.findElement(By.className("dvHeaderText"));
-		String organisationInfo = orgInfo.getText();
-		System.out.println(organisationInfo);
-		Assert.assertTrue(organisationInfo.contains(orgName));
-		Reporter.log("Verification Passed", true);
-
-		//	    SoftAssert sa=new SoftAssert();
-		//	    sa.assertEquals(true, false);		
-		//	    System.out.println("Verfication is done");
+		OrganisationInfo oi=new OrganisationInfo(driver);
+		oi.verifyOrgName(orgName);
 	}
 
 }

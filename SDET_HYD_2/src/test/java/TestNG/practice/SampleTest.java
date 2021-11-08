@@ -9,9 +9,9 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import com.vtiger.genericutil.BaseClass;
+import com.vtiger.genericutils.BaseClass;
 
-@Listeners(com.vtiger.genericutil.ListenerImp.class)
+@Listeners(com.vtiger.genericutils.ListenerImp.class)
 public class SampleTest extends BaseClass {
 
 	@Test
@@ -20,7 +20,7 @@ public class SampleTest extends BaseClass {
 		System.out.println(10/0);
 	}
 
-	//@Test
+	@Test
 	public void modifyOrganization()
 	{
 		System.out.println("Modify the Organization");

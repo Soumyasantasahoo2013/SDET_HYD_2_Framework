@@ -1,4 +1,4 @@
-package com.vtiger.genericutil;
+package com.vtiger.genericutils;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

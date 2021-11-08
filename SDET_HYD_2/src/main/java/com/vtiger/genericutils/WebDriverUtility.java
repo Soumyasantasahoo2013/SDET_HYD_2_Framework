@@ -1,4 +1,4 @@
-package com.vtiger.genericutil;
+package com.vtiger.genericutils;
 
 import java.awt.Robot;
 import java.awt.event.KeyEvent;

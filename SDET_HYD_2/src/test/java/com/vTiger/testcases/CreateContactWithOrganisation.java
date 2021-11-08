@@ -13,11 +13,11 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.vtiger.genericutil.BaseClass;
-import com.vtiger.genericutil.ExcelUtility;
-import com.vtiger.genericutil.JavaUtility;
-import com.vtiger.genericutil.PropertyFileUtility;
-import com.vtiger.genericutil.WebDriverUtility;
+import com.vtiger.genericutils.BaseClass;
+import com.vtiger.genericutils.ExcelUtility;
+import com.vtiger.genericutils.JavaUtility;
+import com.vtiger.genericutils.PropertyFileUtility;
+import com.vtiger.genericutils.WebDriverUtility;
 
 public class CreateContactWithOrganisation extends BaseClass{
 
